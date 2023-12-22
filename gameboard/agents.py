@@ -12,6 +12,7 @@ class Agent():
         self.board = board 
         self.length = board.board_length
         self._board_status = np.zeros((self.length, self.length), dtype=bool)
+        self._moves = None 
         
     def guess(self, row, col):
         self._board_status[row, col] = self.board.hit(row, col) 
@@ -19,6 +20,16 @@ class Agent():
     @property 
     def board_status(self):
         return np.copy(self._board_status)
+    
+    @property 
+    def moves(self):
+        # TODO: Return a copy of the object, and not the object itself 
+        # return np.copy(self._moves)
+        return self._moves.copy() 
+    
+    @moves.setter
+    def moves(self, value):
+        self._moves = value.copy() 
 
     def next_move(self):
         raise Exception("The function 'next_move()' is not implemented for this type of class Agent!")
@@ -26,12 +37,12 @@ class Agent():
 class Naive(Agent):
     def __init__(self, *args):
         super().__init__(*args) 
-        self.moves = np.arange(self.board_status.size)
-        np.random.shuffle(self.moves)
+        self._moves = np.arange(self.board_status.size)
+        np.random.shuffle(self._moves)
         self.current_index = 0
     
     def next_move(self):
-        index =  self.moves[self.current_index] 
+        index = self._moves[self.current_index] 
         coordinates = convert_index(self.length, index)
         self.guess(*coordinates) 
         self.current_index += 1 

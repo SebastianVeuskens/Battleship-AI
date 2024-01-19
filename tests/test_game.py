@@ -1,4 +1,7 @@
-from game import game 
+import sys 
+sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
+from gameboard import board 
+import unittest
 
 board_length = 10
 ships = list() 
@@ -16,6 +19,6 @@ ships.append(ship_3) # Raise ValueError (borders)
 # ships.append(ship_5) # Raise ValueError (coordinates)
 # ships.append(ship_6) # Raise ValueError (coordinates)
 
-moves = game(board_length, ships, sleep=0.1) 
+# moves = game(board_length, ships, sleep=0.1) 
 
 # TODO: Benchmark for hitrate 

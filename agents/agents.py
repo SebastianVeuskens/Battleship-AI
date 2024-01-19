@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import utils.exceptions as ue
 import logging 
 
 def convert_index(board_length, index):
@@ -23,8 +24,6 @@ class Agent():
     
     @property 
     def moves(self):
-        # TODO: Return a copy of the object, and not the object itself 
-        # return np.copy(self._moves)
         return self._moves.copy() 
     
     @moves.setter
@@ -32,7 +31,7 @@ class Agent():
         self._moves = value.copy() 
 
     def next_move(self):
-        raise Exception("The function 'next_move()' is not implemented for this type of class Agent!")
+        raise ue.NotImplementedException("The function 'next_move()' is not implemented for this type of class Agent!")
 
 class Naive(Agent):
     def __init__(self, *args):

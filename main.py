@@ -3,7 +3,7 @@ import time
 
 from gameboard.board import Board 
 from gameboard.ship import Ship 
-from agents.agents import Naive 
+from agents.naive import Naive 
 from display.field import Field 
 
 def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 300, print_move = True, display = True, sleep=None, summary = True): 

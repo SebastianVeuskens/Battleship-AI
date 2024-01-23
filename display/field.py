@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk 
-from environment import Board 
+from gameboard.board import Board 
 
 class Field(tk.Tk):
     def next_move(self):

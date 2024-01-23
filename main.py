@@ -3,8 +3,9 @@ import time
 
 from gameboard.board import Board 
 from gameboard.ship import Ship 
-from agents.naive import Naive 
 from display.field import Field 
+from agents.naive import Naive 
+from agents.bayesian import Bayesian 
 
 def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 300, print_move = True, display = True, sleep=None, summary = True): 
     # Create a board to play on
@@ -22,6 +23,8 @@ def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 
     # TODO: Add a new if statement every for every agent I add
     if agentName == "Naive": 
         agent = Naive(board) 
+    elif agentName == "Bayesian":
+        agent = Bayesian(board)
     else:
         raise Exception("Unknown Agent type")
     
@@ -49,11 +52,11 @@ def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 
 def main():
     board_length = 10
     # board_length = int(input('Enter length of board: '))
-    ship_lengths = (1, 1, 2, 2, 2, 3, 3, 4)
+    ship_lengths = (1, 1, 2, 2)
     agentName = "Naive"
     width = 500
     height = 500
-    print_move = True
+    print_move = False
     display = True
     sleep = None
     summary = True

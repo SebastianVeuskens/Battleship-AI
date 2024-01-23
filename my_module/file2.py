@@ -4,4 +4,7 @@ class MyClass():
 
     def talk(self):
         print(self.my_class)
-        
+
+if __name__ == 'main':
+    a = MyClass()
+    a.talk() 

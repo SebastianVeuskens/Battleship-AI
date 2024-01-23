@@ -1,4 +1,6 @@
 import random 
+import sys 
+sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
 import utils.exceptions as ue
 
 class Ship():
@@ -10,23 +12,23 @@ class Ship():
                 row = random.randint(0, board_length - (ship_length * vertical) - 1)
                 col = random.randint(0, board_length - (ship_length * (not vertical)) - 1)
         
-        self._row = row 
-        self._col = col 
-        self._length = ship_length 
-        self._vertical = vertical 
+        self.__row = row 
+        self.__col = col 
+        self.__length = ship_length 
+        self.__vertical = vertical 
 
     @property 
     def row(self):
-        return self._row 
+        return self.__row 
     
     @property 
     def col(self):
-        return self._col 
+        return self.__col 
     
     @property 
     def length(self):
-        return self._length 
+        return self.__length 
     
     @property 
     def vertical(self):
-        return self._vertical 
+        return self.__vertical 

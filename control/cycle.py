@@ -1,13 +1,15 @@
 import numpy as np 
 import time 
 
+import sys 
+sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
 from gameboard.board import Board 
 from gameboard.ship import Ship 
 from display.field import Field 
 from agents.naive import Naive 
 from agents.bayesian import Bayesian 
 
-def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 300, print_move = True, display = True, sleep=None, summary = True): 
+def solo_game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 300, print_move = True, display = True, sleep=None, summary = True): 
     # Create a board to play on
     board = Board(board_length) 
     for ship_length in ship_lengths:
@@ -44,23 +46,23 @@ def game(board_length, ship_lengths, agentName = "Naive", width = 300, height = 
         num_cells = np.prod(board.dimensions()) 
         # num_ships = 
         print(f"Game finished after {rounds} rounds!") 
-        print(f"Summary statistics: \n -> {rounds * 100 / num_cells}% of all fields were unveiled") 
+        print(f"Summary statistics: \n -> {round(rounds * 100 / num_cells, 2)}% of all fields were unveiled") 
         # print(f"/n -> {}% of all guesses were a hit.")
 
     # return (rounds, moves) 
         
 def main():
-    board_length = 10
+    board_length = 7
     # board_length = int(input('Enter length of board: '))
-    ship_lengths = (1, 1, 2, 2)
+    ship_lengths = (1, 2)
     agentName = "Naive"
-    width = 500
-    height = 500
+    width = 600
+    height = 600
     print_move = False
     display = True
     sleep = None
     summary = True
-    game(board_length = board_length, 
+    solo_game(board_length = board_length, 
          ship_lengths = ship_lengths, 
          agentName = agentName,
          width = width,

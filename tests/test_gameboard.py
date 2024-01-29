@@ -1,8 +1,6 @@
-# import pytest 
 import unittest 
-import random 
-import sys 
-sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
+import random
+
 import utils.exceptions as ue 
 from gameboard.ship import Ship
 from gameboard.board import Board 

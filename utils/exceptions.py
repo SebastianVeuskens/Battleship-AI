@@ -1,14 +1,17 @@
-class CoordinateException(Exception):
+class RulesException(Exception):
+    pass
+
+class CoordinateException(RulesException):
     pass 
 
-class BorderException(Exception):
+class BorderException(RulesException):
     pass 
 
-class OverlapException(Exception):
+class OverlapException(RulesException):
     pass 
 
-class NeighbourException(Exception):
+class NeighbourException(RulesException):
     pass 
 
-class NotImplementedException(Exception):
+class NotImplementedException(RulesException):
     pass

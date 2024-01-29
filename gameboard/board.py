@@ -1,6 +1,8 @@
 import numpy as np
 import copy 
 # import pandas as pd
+# import sys 
+# sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
 import utils.exceptions as ue 
 import logging   
 

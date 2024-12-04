@@ -1,3 +1,5 @@
 $ cat .gitignore
 *.[oa]
 *~
+*.pyc
+*config.yaml

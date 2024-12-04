@@ -1,8 +1,14 @@
 import numpy as np 
 import time 
-
+import yaml 
 import sys 
-sys.path.append('G:/My Drive/Sonstiges/Projects/Battleship-AI')
+
+# Add project path to enable local module imports 
+with open('config.yaml', 'r') as file:
+    configs = yaml.safe_load(file)
+project_path = configs['project-path']
+sys.path.append(project_path)
+
 from gameboard.board import Board 
 from gameboard.ship import Ship 
 from display.field import Field 
